@@ -1,0 +1,10 @@
+// CSS Reset
+@import "~reset-css/reset.css";
+
+// Box sizing
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+body {
+	box-sizing: border-box;
+}
