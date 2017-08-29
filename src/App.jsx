@@ -1,6 +1,7 @@
 import "./App.scss";
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Navigation from "components/Navigation";
 import Home from "pages/Home";
 import Quiz from "pages/Quiz";
 import Results from "pages/Results";
@@ -12,7 +13,7 @@ class App extends React.Component {
 		return (
 			<BrowserRouter>
 				<div className="App">
-					{/* <Navigation/> */}
+					<Navigation/>
 					<Switch>
 						<Route exact path="/" component={Home}/>
 						<Route exact path="/Quiz" component={Quiz}/>
