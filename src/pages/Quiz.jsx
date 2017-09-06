@@ -27,11 +27,16 @@ class Quiz extends Component {
 				<div className="All">
 					{quiz.map((results) => {
 						return (
+
 							<div className="container">
-								<h3>{results.question}</h3>
-								<ol>
-									<li></li>
-								</ol>
+
+								<h3 dangerouslySetInnerHTML={{
+									__html: results.question,
+								}}
+								/>
+								<button className="true">{results.correct_answer}</button>
+								<button className="false">{results.incorrect_answers[0]}</button>
+
 
 
 
