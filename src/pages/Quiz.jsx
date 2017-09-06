@@ -1,14 +1,62 @@
 import "./Quiz.scss";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { getQuiz } from "actions/quiz";
+import Loader from "components/Loader.jsx";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
 
 class Quiz extends Component {
+	componentDidMount() {
+		this.props.getQuiz();
+	}
 	render() {
-		return (
+		const { quiz, isLoading, error } = this.props;
+		console.log(quiz);
+		let content;
+
+		if (isLoading) {
+			content = <Loader/>;
+		}
+		else if (!quiz) {
+			content = <div className="">{ error }</div>;
+		}
+		else { content = (
 			<div>
-				<h1>I am the Quiz Page!</h1>
+				<div className="All">
+					{quiz.map((results) => {
+						return (
+							<div className="container">
+								<h3>{results.question}</h3>
+								<ol>
+									<li></li>
+								</ol>
+
+
+
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		);
+		}
+		return (
+			<div className="All">
+				{ content }
 			</div>
 		);
 	}
 }
 
-export default Quiz;
+
+function mapStateToProps(state, props) {
+	return {
+		quiz: state.quiz.quiz,
+		isLoading: state.quiz.isLoading,
+		error: state.quiz.error,
+	};
+}
+
+export default connect(mapStateToProps, { getQuiz }) (Quiz);

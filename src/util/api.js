@@ -1,0 +1,82 @@
+export default {
+	BASE_PATH: "https://opentdb.com/api.php?amount=10&type=boolean",
+
+	/**
+	 * Fires a request at the API
+	 * @param {object} options - A set of options for the request
+	 * @param {string} options.method - GET, POST, PUT, or DELETE
+	 * @param {object} options.args - Object of arguments to send
+	 * @param {object} options.headers - Any additional headers to send
+	 * @returns {Promise} Fetch promise, resolves with JSON
+	 */
+	request(options) {
+		// Setup some defaults
+		const method = options.method ? options.method.toUpperCase() : "GET";
+		let body = null;
+		let query = "";
+		const headers = {
+			accept: "application/json",
+			...options.headers || {},
+		};
+
+		if (method === "POST" || method === "PUT") {
+			// For POST and PUTs, send args as JSON body
+			body = JSON.stringify(options.args);
+			headers["Content-Type"] = "application/json";
+		}
+		else if (options.args) {
+			// For anything else, send args as query params
+			query = "?" + Object.keys(options.args).map((key) => {
+				return `${encodeURIComponent(key)}=${encodeURIComponent(options.args[key])}`;
+			}).join("&");
+		}
+
+		// Construct and return the fetch
+		return fetch(this.BASE_PATH + query, {
+			method,
+			headers,
+			body,
+			mode: 'cors',
+		}).then((res) => {
+			return res.json();
+		}).catch((err) => {
+			console.error("Uncaught error:", err);
+		});
+	},
+
+	/**
+	 * Fires a GET request at the API
+	 * @param {object} options - See request for all options
+	 * @returns {Promise} Fetch promise, resolves with JSON
+	 */
+	get(options) {
+		return this.request({ ...options, method: "GET" });
+	},
+
+	/**
+	 * Fires a POST request at the API
+	 * @param {object} options - See request for all options
+	 * @returns {Promise} Fetch promise, resolves with JSON
+	 */
+	post(options) {
+		return this.request({ ...options, method: "POST" });
+	},
+
+	/**
+	 * Fires a PUT request at the API
+	 * @param {object} options - See request for all options
+	 * @returns {Promise} Fetch promise, resolves with JSON
+	 */
+	put(options) {
+		return this.request({ ...options, method: "PUT" });
+	},
+
+	/**
+	 * Fires a DELETE request at the API
+	 * @param {object} options - See request for all options
+	 * @returns {Promise} Fetch promise, resolves with JSON
+	 */
+	delete(options) {
+		return this.request({ ...options, method: "DELETE" });
+	},
+};
