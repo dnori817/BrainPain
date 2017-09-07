@@ -30,12 +30,18 @@ class Quiz extends Component {
 
 							<div className="container">
 
-								<div dangerouslySetInnerHTML={{
+								<h1 className="center" dangerouslySetInnerHTML={{
 									__html: results.question,
 								}}
 								/>
-								<button className="true">{results.correct_answer}</button>
-								<button className="false">{results.incorrect_answers[0]}</button>
+								<div className="center">
+									<button className="waves-effect waves-light btn true">
+										{results.correct_answer}
+									</button>
+									<button className="waves-effect waves-light btn false">
+										{results.incorrect_answers[0]}
+									</button>
+								</div>
 
 
 
