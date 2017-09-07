@@ -30,7 +30,7 @@ class Quiz extends Component {
 
 							<div className="container">
 
-								<h3 dangerouslySetInnerHTML={{
+								<div dangerouslySetInnerHTML={{
 									__html: results.question,
 								}}
 								/>
