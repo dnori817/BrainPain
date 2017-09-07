@@ -15,10 +15,13 @@ class Navigation extends Component {
 			text: "Score Board",
 		}];
 		return (
-			<div>
-				<nav>
-					<h3>BrainPain</h3>
+			<div className="navbar-fixed">
+				<nav className="nav-wrapper">
 					<div>
+						<h3 className="left title">BrainPain</h3>
+						{/* <img src="src/assets/images/human-brain-icon-48.png"/> */}
+					</div>
+					<div className="right">
 
 						{links.map((link) => {
 							return (
@@ -26,7 +29,7 @@ class Navigation extends Component {
 									key={link.to}
 									to={link.to}
 								>
-									{link.text}
+									{" | " + link.text}
 								</NavLink>
 							);
 						})}
