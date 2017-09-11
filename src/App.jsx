@@ -7,6 +7,7 @@ import Quiz from "pages/Quiz";
 import Results from "pages/Results";
 import Scores from "pages/Scores";
 
+
 import reduxThunk from "redux-thunk";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -24,6 +25,7 @@ class App extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home}/>
 							<Route exact path="/Quiz" component={Quiz}/>
+
 							<Route exact path="/Results" component={Results}/>
 							<Route exact path="/Scores" component={Scores}/>
 						</Switch>
