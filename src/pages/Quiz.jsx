@@ -35,26 +35,9 @@ class Quiz extends Component {
 
 
 
-		const answerSelected = (isCorrect) => {
-			const { currentQuestion } = this.state;
-			const { quiz } = this.props;
 
-			const score = this.state.score + (isCorrect ? 1 : 0);
-			this.setState({
-				score,
-				canProceed: currentQuestion < quiz.length - 1,
-			});
-		};
 
-		const nextQuestion = () => {
-			this.setState({
-				currentQuestion: this.state.currentQuestion + 1,
-				canProceed: false,
-			});
-		};
 		let content;
-
-
 
 		if (isLoading) {
 			content = <Loader/>;
@@ -72,8 +55,15 @@ class Quiz extends Component {
 						return (
 							<div className="container">
 
-								<Question question={quiz[currentQuestion]}/>
-								    { canProceed && <a className='next-button' onClick={this.nextQuestion}>Next Question</a> }
+								{ !isLoading && this._renderScore() }
+	                { quiz.length > 0 &&
+										<div>
+	                    <Question question={quiz[currentQuestion]} 		answerSelected={this._answerSelected.bind(this)}
+
+											 />
+											<a className='next-button' onClick={this._nextQuestion}>Next Question</a>
+										</div>
+										}
 								{/* <h5 className="center" dangerouslySetInnerHTML={{
 									__html: results.question,
 								}}
@@ -104,6 +94,35 @@ class Quiz extends Component {
 			</div>
 		);
 	}
+	_renderScore = () => {
+		const { quiz } = this.props;
+		const { currentQuestion, score } = this.state;
+
+		return (
+		    <div className='quiz-score'>
+		        <h3>Score: { score }</h3>
+		        {/* <p className='right'>Question {currentQuestion + 1} of {quiz.length}</p> */}
+		    </div>
+		);
+	}
+
+	_answerSelected = (isCorrect) => {
+		const { currentQuestion } = this.state;
+		const { quiz } = this.props;
+
+		const score = this.state.score + (isCorrect ? 1 : 0);
+		this.setState({
+			score,
+
+		});
+	};
+
+	_nextQuestion = () => {
+		this.setState({
+			currentQuestion: this.state.currentQuestion + 1,
+			canProceed: false,
+		});
+	};
 }
 
 
@@ -115,8 +134,8 @@ function mapStateToProps(state, props) {
 	};
 }
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-	getQuiz,
-}, dispatch);
+// const mapDispatchToProps = (dispatch) => bindActionCreators({
+// 	getQuiz,
+// }, dispatch);
 
 export default connect(mapStateToProps, { getQuiz }) (Quiz);

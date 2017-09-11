@@ -1,28 +1,32 @@
 .question {
   margin: 8px 0;
-  background-color: #a7ffeb;
+	// background-image: url(http://www.xponentialdesign.com/img/loops/questionMarkQuiz.gif);
+	background-size: cover;
+  background-color: #82b1ff;
   border-radius: 5px;
   padding: 15px;
+
 	& h3 {
 		text-align: center;
 
 	}
 	& li {
+		font-size: 24px;
 		background-color: rgba(0, 0, 0, .1);
 		padding: 8px;
 		border-radius: 5px;
 		margin: 10px;
 		&:hover {
-			background-color: rgba(0, 0, 0, .1);
+			background-color: rgba(0, 0, 0, .4);
 			cursor: pointer;
 		}
 		&.correct {
-    background-color: rgba(0, 255, 0, .2);
+    background-color: rgba(0, 255, 0, .3);
     color: #2e7d32;
     cursor: default;
 		}
 		&.incorrect {
-    background-color: rgba(255, 0, 0, .2);
+    background-color: rgba(255, 0, 0, .3);
     color: #f44336;
     cursor: default;
 		}
