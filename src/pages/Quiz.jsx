@@ -58,10 +58,10 @@ class Quiz extends Component {
 								{ !isLoading && this._renderScore() }
 	                { quiz.length > 0 &&
 										<div>
+											<button className='waves-effect waves-dark  blue-grey lighten-1 btn next-button' onClick={this._nextQuestion}>Next Question</button>
 	                    <Question question={quiz[currentQuestion]} 		answerSelected={this._answerSelected.bind(this)}
 
 											 />
-											<a className='next-button' onClick={this._nextQuestion}>Next Question</a>
 										</div>
 										}
 								{/* <h5 className="center" dangerouslySetInnerHTML={{
@@ -99,9 +99,9 @@ class Quiz extends Component {
 		const { currentQuestion, score } = this.state;
 
 		return (
-		    <div className='quiz-score'>
-		        <h3>Score: { score }</h3>
-		        {/* <p className='right'>Question {currentQuestion + 1} of {quiz.length}</p> */}
+		    <div className='quiz-score blue-grey lighten-1'>
+		        <p className='count left'>Question {currentQuestion + 1} of {quiz.length}</p>
+						<h3>Score: { score }</h3>
 		    </div>
 		);
 	}
@@ -110,7 +110,16 @@ class Quiz extends Component {
 		const { currentQuestion } = this.state;
 		const { quiz } = this.props;
 
-		const score = this.state.score + (isCorrect ? 1 : 0);
+		let score;
+
+		if (isCorrect) {
+			score = this.state.score + (isCorrect ? 1 : 0);
+		} else {
+			score = this.state.score + (!isCorrect ? -1 : 0);
+
+		}
+
+		// const score = this.state.score + (isCorrect ? 1 : 0);
 		this.setState({
 			score,
 

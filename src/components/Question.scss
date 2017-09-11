@@ -1,5 +1,5 @@
 .question {
-  margin: 8px 0;
+  margin: 8px 0 500px;
 	// background-image: url(http://www.xponentialdesign.com/img/loops/questionMarkQuiz.gif);
 	background-size: cover;
   background-color: #82b1ff;
@@ -11,13 +11,13 @@
 
 	}
 	& li {
-		font-size: 24px;
+		font-size: 18px;
 		background-color: rgba(0, 0, 0, .1);
 		padding: 8px;
 		border-radius: 5px;
 		margin: 10px;
 		&:hover {
-			background-color: rgba(0, 0, 0, .4);
+			background-color: rgba(0, 0, 0, .5);
 			cursor: pointer;
 		}
 		&.correct {

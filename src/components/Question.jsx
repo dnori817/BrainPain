@@ -36,7 +36,7 @@ class Question extends React.Component {
 
 		return (
 			<div className='question'>
-				<h3 dangerouslySetInnerHTML={{
+				<h4 dangerouslySetInnerHTML={{
 					__html: question,
 				}}
 				/>
