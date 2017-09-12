@@ -1,5 +1,5 @@
 export default {
-	BASE_PATH: "https://opentdb.com/api.php?amount=10&type=multiple",
+	BASE_PATH: "https://opentdb.com/api.php?amount=20&type=multiple",
 
 	/**
 	 * Fires a request at the API

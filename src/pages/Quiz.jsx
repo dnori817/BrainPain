@@ -52,13 +52,14 @@ class Quiz extends Component {
 
 
 					{quiz.map((results) => {
+
 						return (
 							<div className="container">
 
 								{ !isLoading && this._renderScore() }
 	                { quiz.length > 0 &&
 										<div>
-											<button className='waves-effect waves-dark  blue-grey lighten-1 btn next-button' onClick={this._nextQuestion}>Next Question</button>
+											<button className='blue-grey lighten-1 btn next-button' onClick={this._nextQuestion}>Skip Question</button>
 	                    <Question question={quiz[currentQuestion]} 		answerSelected={this._answerSelected.bind(this)}
 
 											 />
@@ -101,7 +102,7 @@ class Quiz extends Component {
 		return (
 		    <div className='quiz-score blue-grey lighten-1'>
 		        <p className='count left'>Question {currentQuestion + 1} of {quiz.length}</p>
-						<h3>Score: { score }</h3>
+						<h4 className="score">Score: { score }</h4>
 		    </div>
 		);
 	}
@@ -116,14 +117,15 @@ class Quiz extends Component {
 			score = this.state.score + (isCorrect ? 1 : 0);
 		} else {
 			score = this.state.score + (!isCorrect ? -1 : 0);
-
 		}
-
 		// const score = this.state.score + (isCorrect ? 1 : 0);
+setTimeout(() => {
 		this.setState({
 			score,
+			currentQuestion: this.state.currentQuestion + 1,
 
 		});
+}, 250);
 	};
 
 	_nextQuestion = () => {

@@ -10,9 +10,9 @@ class Navigation extends Component {
 		}, {
 			to: "/Quiz",
 			text: "New Quiz",
-		}, {
-			to: "/Scores",
-			text: "Score Board",
+		// }, {
+		// 	to: "/Scores",
+		// 	text: "Score Board",
 		}];
 		return (
 			<div className="navbar-fixed">
@@ -21,7 +21,7 @@ class Navigation extends Component {
 						<h3 className="left title">BrainPain</h3>
 						{/* <img src="src/assets/images/human-brain-icon-48.png"/> */}
 					</div>
-					<div className="right">
+					<div className="right menu">
 
 						{links.map((link) => {
 							return (
