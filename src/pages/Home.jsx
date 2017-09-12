@@ -4,8 +4,8 @@ import React, { Component } from "react";
 class Home extends Component {
 	render() {
 		return (
-			<div>
-				<h1>I am the Home Page!</h1>
+			<div className="question">
+				<h1 className="center">I am the Home Page!</h1>
 			</div>
 		);
 	}

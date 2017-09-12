@@ -24,7 +24,7 @@ class App extends React.Component {
 						<Navigation/>
 						<Switch>
 							<Route exact path="/" component={Home}/>
-							<Route exact path="/Quiz" component={Quiz}/>
+							<Route exact path="/Quiz" component={Quiz} />
 
 							<Route exact path="/Results" component={Results}/>
 							<Route exact path="/Scores" component={Scores}/>

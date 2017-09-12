@@ -100,10 +100,19 @@ class Quiz extends Component {
 		const { quiz } = this.props;
 		const { currentQuestion, score } = this.state;
 
+		function refreshPage() {
+			window.location.reload();
+		}
+
 		return (
 			<div className='question blue-grey lighten-1'>
 
 				<h1 className="center final-score">FINAL SCORE: {score}</h1>
+				<Link to={"/Quiz"}>
+					<button onClick={ refreshPage } className="center retry">
+						Try Again!
+					</button>
+				</Link>
 			</div>
 		);
 	}

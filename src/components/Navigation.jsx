@@ -3,7 +3,11 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 class Navigation extends Component {
+
 	render() {
+		function refreshPage() {
+			window.location.reload();
+		}
 		const links = [{
 			to: "/",
 			text: "Home",
@@ -19,13 +23,13 @@ class Navigation extends Component {
 				<nav className="nav-wrapper">
 					<div>
 						<h3 className="left title">BrainPain</h3>
-						{/* <img src="src/assets/images/human-brain-icon-48.png"/> */}
 					</div>
 					<div className="right menu">
 
 						{links.map((link) => {
 							return (
 								<NavLink
+									onClick={ refreshPage }
 									key={link.to}
 									to={link.to}
 								>
