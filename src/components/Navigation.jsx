@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 class Navigation extends Component {
-
 	render() {
 		function refreshPage() {
 			window.location.reload();
