@@ -35,7 +35,7 @@ class Question extends React.Component {
 		const { question } = this.props.question;
 
 		return (
-			<div className='z-depth-3 question'>
+			<div className='z-depth-4 question'>
 				<h4 className="question-text" dangerouslySetInnerHTML={{
 					__html: question,
 				}}
@@ -53,6 +53,7 @@ class Question extends React.Component {
 		if (!hasAnswered) {
 			return (
 				<li
+					className="z-depth-4 answer"
 					key={answer}
 					onClick={() => this.selectAnswer(answer)}
 					dangerouslySetInnerHTML={{

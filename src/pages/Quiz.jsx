@@ -82,7 +82,7 @@ class Quiz extends Component {
 		const { currentQuestion, score } = this.state;
 
 		return (
-			<div className='quiz-score blue-grey lighten-1'>
+			<div className='z-depth-1 quiz-score blue-grey lighten-1'>
 				<p className='count left'>Question {currentQuestion + 1}
 					 of {quiz.length}</p>
 

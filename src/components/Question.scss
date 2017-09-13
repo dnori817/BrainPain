@@ -1,8 +1,9 @@
 .question {
-  margin: 8px 0 500px;
+  margin: 40px 0;
   background-color: #ee6e73;
   border-radius: 5px;
   padding: 15px;
+
 
 	&-text {
 	}
@@ -15,6 +16,7 @@
 		padding: 8px;
 		border-radius: 5px;
 		margin: 10px;
+		font-size: 22px;
 		&:hover {
 			background-color: rgba(0, 0, 0, .5);
 			cursor: pointer;

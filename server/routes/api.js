@@ -13,7 +13,7 @@ router.post("/scores", (req, res) => {
 	// First create the score
 	Score.create({
 		name: req.body.name,
-		
+		score: req.body.score,
 	}).catch((err) => {
 		apiErr(req, res, {
 			code: 500,
