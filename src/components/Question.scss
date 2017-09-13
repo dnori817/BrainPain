@@ -1,15 +1,16 @@
 .question {
   margin: 8px 0 500px;
-  background-color: #82b1ff;
+  background-color: #ee6e73;
   border-radius: 5px;
   padding: 15px;
 
+	&-text {
+	}
 	& h3 {
 		text-align: center;
 
 	}
 	& li {
-		font-size: 18px;
 		background-color: rgba(0, 0, 0, .1);
 		padding: 8px;
 		border-radius: 5px;

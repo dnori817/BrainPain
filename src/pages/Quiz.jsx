@@ -47,30 +47,26 @@ class Quiz extends Component {
 
 					<div className="All">
 
-						{quiz.map((results) => {
-							return (
-								<div className="container">
-									{currentQuestion >= quiz.length && this._finalScore()}
+						<div className="container">
+							{currentQuestion >= quiz.length && this._finalScore()}
 
-									{currentQuestion < quiz.length &&
-										<div>
-											{this._renderScore()}
-											<button
-												className='blue-grey lighten-1 btn next-button'
-												onClick={this._nextQuestion}
-											>
-											Skip Question
-											</button>
-											<Question
-												question={quiz[currentQuestion]}
-												answerSelected={this._answerSelected.bind(this)}
-											/>
-										</div>
-									}
-
+							{currentQuestion < quiz.length &&
+								<div>
+									{this._renderScore()}
+									<button
+										className='blue-grey lighten-1 btn next-button'
+										onClick={this._nextQuestion}
+									>
+									Skip Question
+									</button>
+									<Question
+										question={quiz[currentQuestion]}
+										answerSelected={this._answerSelected.bind(this)}
+									/>
 								</div>
-							);
-						})}
+							}
+
+						</div>
 					</div>
 				</div>
 			);

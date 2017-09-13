@@ -35,8 +35,8 @@ class Question extends React.Component {
 		const { question } = this.props.question;
 
 		return (
-			<div className='question'>
-				<h4 dangerouslySetInnerHTML={{
+			<div className='z-depth-3 question'>
+				<h4 className="question-text" dangerouslySetInnerHTML={{
 					__html: question,
 				}}
 				/>

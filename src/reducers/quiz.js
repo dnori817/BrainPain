@@ -2,9 +2,7 @@ const INITIAL_STATE = {
 	quiz: [],
 	error: null,
 	isLoading: false,
-	// currentQuestion: 0,
-	// score: 0,
-	// canProceed: false,
+
 };
 
 function quizReducer(state = INITIAL_STATE, action) {
