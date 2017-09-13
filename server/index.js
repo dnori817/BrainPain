@@ -6,7 +6,7 @@ import chalk from "chalk";
 
 import sequelize from "./util/sequelize";
 import apiRoutes from "./routes/api";
-import adminRoutes from "./routes/admin";
+// import adminRoutes from "./routes/admin";
 import reactRoutes from "./routes/react";
 
 // Configure app
@@ -27,7 +27,7 @@ app.use(
 
 // Custom routes
 app.use("/api", apiRoutes);
-app.use("/admin", adminRoutes);
+// app.use("/admin", adminRoutes);
 
 if (!process.env.SERVER_ONLY) {
 	reactRoutes(app);
