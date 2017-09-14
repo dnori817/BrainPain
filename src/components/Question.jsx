@@ -1,6 +1,8 @@
 import "./Question.scss";
 import React from "react";
 import PropTypes from "prop-types";
+import Sound from 'react-sound';
+
 
 class Question extends React.Component {
 	constructor(props) {
@@ -66,8 +68,28 @@ class Question extends React.Component {
 		let className = 'no-class';
 		if (isCorrect && answer === answerSelected) {
 			className = 'correct';
+			// return (
+			// 	<Sound
+			// 		url="../assets/sounds/correct.wav"
+			// 		playStatus={Sound.status.PLAYING}
+			// 		playFromPosition={0}
+			// 		onLoading={this.handleSongLoading}
+			// 		onPlaying={this.handleSongPlaying}
+			// 		onFinishedPlaying={this.handleSongFinishedPlaying}
+			// 	/>
+			// );
 		} else if (!isCorrect && answer === answerSelected) {
 			className = 'incorrect';
+			// return (
+			// 	<Sound
+			// 		url="../assets/sounds/error.wav"
+			// 		playStatus={Sound.status.PLAYING}
+			// 		playFromPosition={0}
+			// 		onLoading={this.handleSongLoading}
+			// 		onPlaying={this.handleSongPlaying}
+			// 		onFinishedPlaying={this.handleSongFinishedPlaying}
+			// 	/>
+			// );
 		}
 
 		return (
