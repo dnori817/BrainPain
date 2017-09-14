@@ -13,7 +13,7 @@ class Home extends Component {
 					<p>If you have no clue, press skip to go the next question without penalty</p>
 				</div>
 				<Link className="center" to={"/Quiz"}>
-					<button className="waves-effect waves-light btn center">
+					<button className="waves-effect waves-light btn center start">
 						START THE QUIZ!!!
 					</button>
 				</Link>

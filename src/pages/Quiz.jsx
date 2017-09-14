@@ -107,7 +107,7 @@ class Quiz extends Component {
 		}
 
 		return (
-			<div className="z-depth-4 center question blue-grey lighten-1">
+			<div className="z-depth-3 center question blue-grey lighten-1">
 
 				<h1 className="center final-score">FINAL SCORE: {score}</h1>
 				<Link to={"/Quiz"}>
