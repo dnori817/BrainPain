@@ -2,8 +2,7 @@
 @import "~reset-css/reset.css";
 // Materialize-css
 @import "~materialize-css/dist/css/materialize.css";
-// @import "~jquery/dist/jquery.js";
-// @import "~materialize-css/dist/js/materialize.js";
+
 
 
 // Box sizing
@@ -15,5 +14,16 @@ body {
 	background-color: #607d8b;
 	// overflow: hidden;
 	color: white;
+	text-shadow: 1px 1px #424242;
+
+
+}
+
+footer {
+	bottom: 5px;
+	position: fixed;
+	text-align: center;
+	width:100%;
+	z-index: -1;
 
 }

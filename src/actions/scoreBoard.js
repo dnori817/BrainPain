@@ -2,7 +2,6 @@ import API from "util/api";
 
 export function submitScore(score, player) {
 	return (dispatch, getStore) => {
-
 		const { scores } = getStore().scores;
 		const scoreIds  =	scores.map(function(score) {
 			return score.id;

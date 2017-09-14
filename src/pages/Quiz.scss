@@ -1,25 +1,28 @@
 .quiz-score {
-
+	color: black;
 	text-align: center;
-	background-color: #8bc34a;
-
+	background-color: white;
 	width: 33%;
 	height: 15%;
-	border-radius: 3px;
 	float: right;
-	margin-top: 135px;
+	margin-top: 66px;
 	padding: 5px;
+	text-shadow: none;
 }
 .score {
 
 }
 .next-button {
-	margin-top: 60px;
+	margin: 15px 0 0 5px;
 
 }
 
 .count {
-	padding: 5px;
+	padding: 25px 15px 0;
+	text-shadow: none;
+}
+.final {
+
 }
 
 .final-score {

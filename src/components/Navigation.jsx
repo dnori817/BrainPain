@@ -8,10 +8,7 @@ class Navigation extends Component {
 			window.location.reload();
 		}
 		const links = [{
-			to: "/",
-			text: "Home",
-		}, {
-			to: "/Quiz",
+				to: "/Quiz",
 			text: "New Quiz",
 		// }, {
 		// 	to: "/Scores",
@@ -32,7 +29,7 @@ class Navigation extends Component {
 									key={link.to}
 									to={link.to}
 								>
-									{" | " + link.text}
+									{link.text}
 								</NavLink>
 							);
 						})}

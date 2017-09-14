@@ -1,15 +1,16 @@
 export default {
-	BASE_PATH: "https://opentdb.com/api.php?amount=5&type=multiple",
+	BASE_PATH: "https://opentdb.com/api.php?amount=10&type=multiple&category=",
 
 	/**
 	 * Fires a request at the API
+	 * @param {string} path - Path of the request
 	 * @param {object} options - A set of options for the request
 	 * @param {string} options.method - GET, POST, PUT, or DELETE
 	 * @param {object} options.args - Object of arguments to send
 	 * @param {object} options.headers - Any additional headers to send
 	 * @returns {Promise} Fetch promise, resolves with JSON
 	 */
-	request(options) {
+	request(path, options) {
 		// Setup some defaults
 		const method = options.method ? options.method.toUpperCase() : "GET";
 		let body = null;
@@ -32,7 +33,7 @@ export default {
 		}
 
 		// Construct and return the fetch
-		return fetch(this.BASE_PATH + query, {
+		return fetch(this.BASE_PATH + path + query, {
 			method,
 			headers,
 			body,
@@ -46,11 +47,12 @@ export default {
 
 	/**
 	 * Fires a GET request at the API
+	 * @param {string} path - Path of the request, with starting /
 	 * @param {object} options - See request for all options
 	 * @returns {Promise} Fetch promise, resolves with JSON
 	 */
-	get(options) {
-		return this.request({ ...options, method: "GET" });
+	get(path, options) {
+		return this.request(path, { ...options, method: "GET" });
 	},
 
 	/**

@@ -54,11 +54,13 @@ class Quiz extends Component {
 								<div>
 									{this._renderScore()}
 									<button
-										className='blue-grey lighten-1 btn next-button'
+										className='waves-effect waves-light blue-grey lighten-1 btn next-button'
 										onClick={this._nextQuestion}
 									>
 									Skip Question
 									</button>
+									<p className='count left'>Question {currentQuestion + 1 + " "}
+										of {quiz.length}</p>
 									<Question
 										question={quiz[currentQuestion]}
 										answerSelected={this._answerSelected.bind(this)}
@@ -82,9 +84,7 @@ class Quiz extends Component {
 		const { currentQuestion, score } = this.state;
 
 		return (
-			<div className='z-depth-1 quiz-score blue-grey lighten-1'>
-				<p className='count left'>Question {currentQuestion + 1}
-					 of {quiz.length}</p>
+			<div className='quiz-score'>
 
 					 <h4 className="score">Score: {score}</h4>
 
@@ -101,11 +101,11 @@ class Quiz extends Component {
 		}
 
 		return (
-			<div className="center question blue-grey lighten-1">
+			<div className="z-depth-4 center question blue-grey lighten-1">
 
 				<h1 className="center final-score">FINAL SCORE: {score}</h1>
 				<Link to={"/Quiz"}>
-					<button onClick={ refreshPage } className="center retry">
+					<button onClick={ refreshPage } className="wave s-effect waves-light btn center retry">
 						Try Again!
 					</button>
 				</Link>

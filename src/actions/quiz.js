@@ -3,7 +3,7 @@ import API from "util/api";
 export function getQuiz() {
 	return (dispatch) => {
 		dispatch({ type: "LOADING_QUIZ" });
-		API.get().then((res) => {
+		API.get("9").then((res) => {
 			if (res.results) {
 				dispatch({
 					type: 'GET_QUIZ',
