@@ -1,5 +1,7 @@
 # Final Project | Brain Pain - Trivia game
 
+## [Play Now!](http://brainpain.herokuapp.com/)
+
 #### Summary
 
 A rapid-fire trivia game.  Players will be asked random simple questions of various categories that must be answered quickly!  Get as many correct answers in the shortest amount of time.  Can you get the highest score?
