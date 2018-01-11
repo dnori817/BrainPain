@@ -1,9 +1,9 @@
 import API from "util/api";
 
-export function getQuiz() {
+export function getQuiz(catId) {
 	return (dispatch) => {
 		dispatch({ type: "LOADING_QUIZ" });
-		API.get("9").then((res) => {
+		API.get(catId).then((res) => {
 			if (res.results) {
 				dispatch({
 					type: 'GET_QUIZ',

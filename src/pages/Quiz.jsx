@@ -24,8 +24,12 @@ class Quiz extends Component {
 			canProceed: false,
 		};
 	}
+
+
 	componentDidMount() {
-		this.props.getQuiz();
+
+		this.props.getQuiz(this.props.catId);
+		console.log(this.props.catId);
 	}
 
 
